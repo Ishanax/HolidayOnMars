@@ -33,9 +33,20 @@ h1,
 h2,
 h3 {
   font-family: var(--ff-accent);
+  color: var(--clr-primary-400);
   font-weight: 900;
   line-height: 1;
   margin-bottom: 1em;
+}
+
+h1 {
+  font-size: 5rem;
+  background: -webkit-linear-gradient(left, #41251a, #d46149);
+  background: -o-linear-gradient(right, #41251a, #d46149);
+   background: -moz-linear-gradient(right, #41251a, #d46149);
+   background: linear-gradient(to right, #41251a, #d46149); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h2,
@@ -51,12 +62,18 @@ img {
 
 .text-center {
   text-align: center;
-
 }
 
 header,
 section {
-  padding: 3rem 0;
+  padding: 4rem 0;
+}
+
+@media (min-width:40em) {
+  header,
+  section {
+    padding: 7rem 0;
+}
 }
 
 /*magically makes it responsive */
@@ -65,8 +82,25 @@ section {
   width: min(90%, 70.5rem);
 }
 
+.split {
+  display: flex;
+  flex-direction: column;
+}
 
+@media (min-width: 40em) {
+  .split {
+    flex-direction: row;
+  }
+  /* all direct children of my split will have */
+  .split > * {
+    flex-basis: 100%;
+  }
+  .split > * + * {
+    margin-left: 2em;
+  }
+}
 
+/* Color background div's seperately */
 .bg-light {
   background-color: var(--clr-primary-200)
 }
