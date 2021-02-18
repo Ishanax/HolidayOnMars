@@ -35,11 +35,37 @@ h3 {
   font-family: var(--ff-accent);
   font-weight: 900;
   line-height: 1;
+  margin-bottom: 1em;
 }
 
+h2,
+h3,
+p {
+  margin-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+  display:block;
+}
+
+.text-center {
+  text-align: center;
+
+}
+
+header,
 section {
   padding: 3rem 0;
 }
+
+/*magically makes it responsive */
+.container {
+  margin-inline: auto;
+  width: min(90%, 70.5rem);
+}
+
+
 
 .bg-light {
   background-color: var(--clr-primary-200)
