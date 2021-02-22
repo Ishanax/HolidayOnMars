@@ -53,44 +53,30 @@
         <img src="./images/mars.jpg" alt="Picture of planet Mars" width="400px">
       </div>
 <!--Contact form-->
-      <div class="app">
-        <form class="form">
-          <h2 class="app-info">Book your trip here!</h2>
-          <h3>We will contact you about further details such as payment and avaibality.</h3>
-          <div class="user_field">
-            <div class="row _1" style="--index: 0">
-              <div class="textfield">
-                <input type="text" class="text-input">
-                <span class="fieldinfo">Name</span>
-              </div>
-              <div class="textfield">
-                <input type="email" class="text-input">
-                <span class="fieldinfo">Email</span>
-              </div>
-            </div>
-            <div class="row _2" style="--index: 1">
-              <div class="textfield">
-                <input type="number" class="text-input">
-                <span class="fieldinfo">Phone</span>
-              </div>
-              <div class="textfield">
-                <input type="text" class="text-input">
-                <span class="fieldinfo">How many persons?</span>
-              </div>
-            </div>
-            <div class="row _3" style="--index: 2">
-              <div class="textfield">
-                <textarea class="text-input" placeholder="Feel free to ask any other questions here :)"></textarea>
-              </div>
-            </div>
-            <div class="row _4" style="--index: 3">
-              <button class="submit btn">Submit</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+<div class="container">
+  <form name="myForm" onsubmit="return validate();">
+
+    <label for="fname">Full Name</label>
+    <input type="text" id="fname" name="name" placeholder="Your name..">
+
+    <label for="lname">Email</label>
+    <input type="text" id="lname" name="email" placeholder="Your email address..">
+
+    <label for="date">Prefered departure date</label>
+    <select id="date" name="date">
+      <option value="2024">2024</option>
+      <option value="canada">2026</option>
+      <option value="usa">2028</option>
+    </select>
+
+    <label for="subject">Any questions?</label>
+    <textarea id="subject" name="subject" placeholder="Please leave your questions here..." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+
+</div>
+
 </section>
 
 </body>
