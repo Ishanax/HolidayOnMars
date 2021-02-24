@@ -37,7 +37,7 @@
     <div class="split">
       <div>
         <h2>Trip details</h2>
-        <p>The total costs for the round trip will be around 9 million euros Book soon, because there are limited spots avaible. The next take off is in 2024 and we expect to return in 1,5 year later. (Food and drinks are not included)</p>
+        <p>The total costs for the round trip will be around 9 million euros. Book soon, because there are limited spots available. The next take off is in 2024 and we expect to return 1,5 years later. (Food and drinks are not included)</p>
       </div>
       <div>
         <img src="./images/atronautOnMars.jpg" alt="Astronaut in red dust looking at Mars station" width="400px">
@@ -62,8 +62,12 @@
     <label for="lname">Email</label>
     <input type="text" id="lname" name="email" placeholder="Your email address..">
 
+    <label for="country">Country</label>
+    <option disabled selected value> -- select a country -- </option>
+
     <label for="date">Prefered departure date</label>
     <select id="date" name="date">
+      <option value="choose">Pick a year</option>
       <option value="2024">2024</option>
       <option value="canada">2026</option>
       <option value="usa">2028</option>
@@ -71,8 +75,12 @@
 
     <label for="subject">Any questions?</label>
     <textarea id="subject" name="subject" placeholder="Please leave your questions here..." style="height:200px"></textarea>
+    
+    <input type="checkbox" id="newsletter" />Send me montly status updates for take off!
+    <br>
+    
 
-    <input type="submit" value="Submit">
+    <input onclick="sendContact();" type="submit" value="Submit">
   </form>
 
 </div>
