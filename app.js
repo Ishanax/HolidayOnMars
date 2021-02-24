@@ -1,6 +1,37 @@
 //form
 
-function validate(form) {
+
+var fields {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function validate(form) {
 
   // validation code here ...
   var checkName = document.forms["myForm"]["name"].value; {
@@ -15,4 +46,4 @@ function validate(form) {
     }
   }
 
-}
+}*/
