@@ -1,7 +1,75 @@
 //form
 
+//collect all fields of the form:
+var fields { 
+  //Linking all the fields to our fields object:
+  document.addEventListener("DomContentLoaded", function) {
+    //get all the form fields by id:
+    fields.fullName = document.getElementById('fullName');
+    fields.email = document.getElementById('email');
+    fields.country = document.getElementById('country');
+    fields.date = document.getElementById('date');
+    fields.subject = document.getElementById('subject');
+    fields.newsletter = document.getElementById('newsletter');
+  })
+};
 
-var fields {}
+//Check if user entered a value:
+function isNotEmpty(value){
+  //Check if value if not null or undefined, if so return false
+  if (value == null ||typeof value == 'undefined') return false;
+  //check if field value is at least one character long:
+  return (value.length > 0);
+}
+
+//Check if string is an email:
+function checkEmail(email) {
+  let regex =  /^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+  return regex.test(String(email).toLowerCase());
+}
+
+//Main field validation function, this checks the condition and if there is an error colors the field red:
+  //First parameter is the field itself, second is function be described before:
+function fieldValid(field, validationFunction) {
+  //Check if the field exists:
+  if (field == null) return false;
+  //Check validity of field value:
+  let isFieldValid = validationFunction(field.value)
+  //check value and not than color the field:
+  if (!isFieldValid) {
+    field.className = 'placeholderRed';
+  }
+  //if field is valid we set className to empty string to clear formatting:
+  else {
+    field.className = '';
+  }
+}
+//Central function for checking the validity of contact form, here we combine all the checks:
+function isValid() {
+  var valid = true;
+  
+  valid &= fieldValidation(fields.fullName, isNotEmpty);
+  valid &= fieldValidation(fields.lastName, isNotEmpty);
+  valid &= fieldValidation(fields.country, isNotEmpty);
+  valid &= fieldValidation(fields.email, isEmail);
+  valid &= fieldValidation(fields.subject, isNotEmpty);
+  return valid;
+ }
+
+ //Sending the contact form
+ function sendForm() {
+   //Check validity:
+   if(isValid()) {
+     alert('I will see you on Mars!')
+   }
+   else {
+     alert('There was an error')
+   }
+ }
+
+
+
+
 
 
 
