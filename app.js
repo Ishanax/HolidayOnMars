@@ -57,14 +57,18 @@ function isValid() {
   return valid;
  }
 
+
+
  //Sending the contact form
  function sendContact() {
    //Check validity:
    if(isValid()) {
+    //let usr = new User(fullName.value, email.value, newsletter.checked, question.value);
+
      alert('I will see you on Mars!')
    }
    else {
-     alert('There was an error')
+     alert('You forgot to fill something in')
    }
  }
 
