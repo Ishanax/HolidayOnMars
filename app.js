@@ -1,18 +1,18 @@
 //form
 
 //collect all fields of the form:
-var fields { 
-  //Linking all the fields to our fields object:
-  document.addEventListener("DomContentLoaded", function) {
-    //get all the form fields by id:
+var fields = {};
+
+//Linking all the fields to our fields object:
+document.addEventListener("DOMContentLoaded", function() {
+  //get all the form fields by id:
     fields.fullName = document.getElementById('fullName');
     fields.email = document.getElementById('email');
-    fields.country = document.getElementById('country');
     fields.date = document.getElementById('date');
     fields.subject = document.getElementById('subject');
     fields.newsletter = document.getElementById('newsletter');
   })
-};
+
 
 //Check if user entered a value:
 function isNotEmpty(value){
@@ -23,14 +23,14 @@ function isNotEmpty(value){
 }
 
 //Check if string is an email:
-function checkEmail(email) {
+function isEmail(email) {
   let regex =  /^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
   return regex.test(String(email).toLowerCase());
 }
 
 //Main field validation function, this checks the condition and if there is an error colors the field red:
   //First parameter is the field itself, second is function be described before:
-function fieldValid(field, validationFunction) {
+function fieldValidation(field, validationFunction) {
   //Check if the field exists:
   if (field == null) return false;
   //Check validity of field value:
@@ -43,21 +43,22 @@ function fieldValid(field, validationFunction) {
   else {
     field.className = '';
   }
+  return isFieldValid;
 }
+
 //Central function for checking the validity of contact form, here we combine all the checks:
 function isValid() {
   var valid = true;
   
   valid &= fieldValidation(fields.fullName, isNotEmpty);
-  valid &= fieldValidation(fields.lastName, isNotEmpty);
-  valid &= fieldValidation(fields.country, isNotEmpty);
   valid &= fieldValidation(fields.email, isEmail);
   valid &= fieldValidation(fields.subject, isNotEmpty);
+
   return valid;
  }
 
  //Sending the contact form
- function sendForm() {
+ function sendContact() {
    //Check validity:
    if(isValid()) {
      alert('I will see you on Mars!')
@@ -66,21 +67,6 @@ function isValid() {
      alert('There was an error')
    }
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
