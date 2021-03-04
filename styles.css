@@ -48,6 +48,9 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+#titleP{
+  color: #41251a;
+}
 
 h2,
 h3,
@@ -58,19 +61,76 @@ p {
 img {
   max-width: 100%;
   display:block;
+  margin: 1rem;
 }
 
 .text-center {
   text-align: center;
 }
 
-header,
+
 section {
   padding: 4rem 0;
 }
 
+/*NAV BAR*/
+.nav { 
+  background: -webkit-linear-gradient(left, #41251a, #d46149);
+  background: -o-linear-gradient(right, #41251a, #d46149);
+  background: -moz-linear-gradient(right, #41251a, #d46149);
+  background: linear-gradient(to right, #41251a, #d46149); 
+  overflow: hidden; 
+}
 
-/*contact form*/
+/*style links in nav bar */
+.nav a {
+  float: right;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  padding: 20px;
+  color:var(--clr-neutral-100);
+}
+ /*Change color link on hover */
+ .nav a:hover {
+   background-color: transparent;
+ }
+
+ /* Hide the link that should open and close the topnav on small screens */
+.nav .icon {
+  display: none;
+}
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .nav a {display: none;}
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .nav.responsive {position: relative;}
+  .nav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+  }
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: center; 
+  }
+  .nav a{
+    transition: all 1.5s ease-out;
+  }
+  
+}
+
+
+/*CONTACT FORM*/
 
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
