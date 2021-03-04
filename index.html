@@ -4,19 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
   <link rel="stylesheet" href="styles.css">
   <title>Holiday on Mars</title>
 </head>
 
 <body>
-  <header class="bg-light text-center">
+    <!--Nav bar--> 
+    <div class="nav" id="myNav">
+      <a href="#navTrip">Trip details</a>
+      <a href="#navForm">Contact form</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fas fa-rocket"></i>
+      </a>
+    </div>
+    
+  <section class="bg-light text-center">
     <div class="container"></div>
-      <p>A relaxing holiday to</p>
+      <p id="titleP">A relaxing holiday to</p>
       <h1>Planet Mars</h1>
     </div>
-  </header>
+  </section>
+  
 
 <section class="bg-lighter">
   <div class="container">
@@ -36,7 +46,7 @@
   <div class="container">
     <div class="split">
       <div>
-        <h2>Trip details</h2>
+        <h2 id="navTrip">Trip details</h2>
         <p>The total costs for the round trip will be around 9 million euros. Book soon, because there are limited spots available. The next take off is in year 2024 and we expect to return 1,5 years later. (Food and drinks are not included)</p>
       </div>
       <div>
@@ -53,10 +63,10 @@
         <img src="./images/mars.jpg" alt="Picture of planet Mars" width="400px">
       </div>
 <!--Contact form-->
-<div class="container">
+<div id="navForm" class="container">
   <form name="myForm" onsubmit="return false();">
 
-    <label for="fname">Full Name</label>
+    <label for="fname">Full Name <i class="fas fa-user-astronaut"></i></label>
     <input type="text" id="fullName" name="fullName" placeholder="Your name..">
 
     <label for="email">Email</label>
